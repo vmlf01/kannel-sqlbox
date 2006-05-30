@@ -1,6 +1,7 @@
 * text=auto !eol
 /CHANGES -text
 /Makefile -text
+/UPGRADE -text
 gw/sqlbox.c -text
 gw/sqlbox_mysql.c -text
 gw/sqlbox_mysql.h -text
