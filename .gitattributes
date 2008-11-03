@@ -11,12 +11,10 @@
 /acinclude.m4 -text
 autotools/config.guess -text
 autotools/config.sub -text
-autotools/depcomp -text
-autotools/install-sh -text
 autotools/ltmain.sh -text
-autotools/missing -text
 /bootstrap -text
-/configure.ac -text
+/configure.in -text
+doc/userguide.xml -text
 example/sqlbox.conf.example -text
 gw/Makefile.am -text
 gw/sqlbox-cfg.def -text
@@ -27,4 +25,4 @@ gw/sqlbox_pgsql.c -text
 gw/sqlbox_pgsql.h -text
 gw/sqlbox_sql.c -text
 gw/sqlbox_sql.h -text
-/libtool -text
+/sb-config.h.in -text
