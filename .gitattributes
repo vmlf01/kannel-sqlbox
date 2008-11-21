@@ -33,4 +33,5 @@ gw/sqlbox_sqlite.c -text
 gw/sqlbox_sqlite.h -text
 gw/sqlbox_sqlite3.c -text
 gw/sqlbox_sqlite3.h -text
+rpm/sqlbox.spec.in -text svneol=unset#application/octet-stream
 /sb-config.h.in -text
