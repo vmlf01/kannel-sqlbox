@@ -1,8 +1,15 @@
+/Makefile
 /Makefile.in
 /aclocal.m4
 /autom4te.cache
 autotools/depcomp
 autotools/install-sh
 autotools/missing
+/config.status
 /configure
+gw/Makefile
 gw/Makefile.in
+gw/sqlbox
+/libtool
+rpm/sqlbox.spec
+/sb-config.h

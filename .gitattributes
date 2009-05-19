@@ -19,6 +19,8 @@ example/sqlbox.conf.example -text
 gw/Makefile.am -text
 gw/sqlbox-cfg.def -text
 gw/sqlbox.c -text
+gw/sqlbox_mssql.c -text
+gw/sqlbox_mssql.h -text
 gw/sqlbox_mysql.c -text
 gw/sqlbox_mysql.h -text
 gw/sqlbox_oracle.c -text
