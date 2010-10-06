@@ -5,14 +5,17 @@
 /INSTALL -text
 /KannelLICENSE -text
 /Makefile.am -text
+/Makefile.in -text
 /NEWS -text
 /README -text
 /UPGRADE -text
 /acinclude.m4 -text
+/aclocal.m4 -text
 autotools/config.guess -text
 autotools/config.sub -text
 autotools/ltmain.sh -text
 /bootstrap -text
+/configure -text
 /configure.in -text
 doc/userguide.xml -text
 example/sqlbox.conf.example -text
