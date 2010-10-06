@@ -5,14 +5,11 @@
 /.project
 /Makefile
 /Makefile-sqlbox.mk
-/Makefile.in
-/aclocal.m4
 /autom4te.cache
 autotools/depcomp
 autotools/install-sh
 autotools/missing
 /config.status
-/configure
 doc/userguide.html
 doc/userguide.pdf
 doc/userguide.ps
@@ -22,7 +19,6 @@ gw/.libs
 gw/Makefile
 gw/Makefile.in
 gw/sqlbox
-/libtool
 /nbproject
 rpm/sqlbox.spec
 /sb-config.h
