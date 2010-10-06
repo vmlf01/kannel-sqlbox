@@ -23,6 +23,7 @@ autotools/missing -text
 doc/userguide.xml -text
 example/sqlbox.conf.example -text
 gw/Makefile.am -text
+gw/Makefile.in -text
 gw/sqlbox-cfg.def -text
 gw/sqlbox.c -text
 gw/sqlbox_mssql.c -text

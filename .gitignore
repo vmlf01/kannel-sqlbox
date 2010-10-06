@@ -14,7 +14,6 @@ doc/userguide.rtf
 gw/.deps
 gw/.libs
 gw/Makefile
-gw/Makefile.in
 gw/sqlbox
 /nbproject
 rpm/sqlbox.spec
