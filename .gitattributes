@@ -13,7 +13,10 @@
 /aclocal.m4 -text
 autotools/config.guess -text
 autotools/config.sub -text
+autotools/depcomp -text
+autotools/install-sh -text
 autotools/ltmain.sh -text
+autotools/missing -text
 /bootstrap -text
 /configure -text
 /configure.in -text

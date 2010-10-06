@@ -6,9 +6,6 @@
 /Makefile
 /Makefile-sqlbox.mk
 /autom4te.cache
-autotools/depcomp
-autotools/install-sh
-autotools/missing
 /config.status
 doc/userguide.html
 doc/userguide.pdf
