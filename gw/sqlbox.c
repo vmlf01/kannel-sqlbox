@@ -286,6 +286,11 @@ static void smsbox_to_bearerbox(void *arg)
         if (msg_type(msg) == sms) {
             debug("sqlbox", 0, "smsbox_to_bearerbox: sms received");
             msg_escaped = msg_duplicate(msg);
+            /* convert validity & deferred to minutes */
+            if (msg->sms.validity != SMS_PARAM_UNDEFINED)
+                msg->sms.validity = (msg->sms.validity - time(NULL))/60;
+            if (msg->sms.deferred != SMS_PARAM_UNDEFINED)
+                msg->sms.deferred = (msg->sms.deferred - time(NULL))/60;
             gw_sql_save_msg(msg_escaped, octstr_imm("MT"));
             msg_destroy(msg_escaped);
         }
@@ -593,6 +598,11 @@ static void sql_to_bearerbox(void *arg)
             if (global_sender != NULL && (msg->sms.sender == NULL || octstr_len(msg->sms.sender) == 0)) {
                 msg->sms.sender = octstr_duplicate(global_sender);
             }
+            /* convert validity and deferred to unix timestamp */
+            if (msg->sms.validity != SMS_PARAM_UNDEFINED)
+                msg->sms.validity = time(NULL) + msg->sms.validity * 60;
+            if (msg->sms.deferred != SMS_PARAM_UNDEFINED)
+                msg->sms.deferred = time(NULL) + msg->sms.deferred * 60;
             send_msg(boxc->bearerbox_connection, boxc, msg);
             gw_sql_save_msg(msg, octstr_imm("MT"));
         }
