@@ -287,10 +287,10 @@ static void smsbox_to_bearerbox(void *arg)
             debug("sqlbox", 0, "smsbox_to_bearerbox: sms received");
             msg_escaped = msg_duplicate(msg);
             /* convert validity & deferred to minutes */
-            if (msg->sms.validity != SMS_PARAM_UNDEFINED)
-                msg->sms.validity = (msg->sms.validity - time(NULL))/60;
-            if (msg->sms.deferred != SMS_PARAM_UNDEFINED)
-                msg->sms.deferred = (msg->sms.deferred - time(NULL))/60;
+            if (msg_escaped->sms.validity != SMS_PARAM_UNDEFINED)
+                msg_escaped->sms.validity = (msg_escaped->sms.validity - time(NULL))/60;
+            if (msg_escaped->sms.deferred != SMS_PARAM_UNDEFINED)
+                msg_escaped->sms.deferred = (msg_escaped->sms.deferred - time(NULL))/60;
             gw_sql_save_msg(msg_escaped, octstr_imm("MT"));
             msg_destroy(msg_escaped);
         }
