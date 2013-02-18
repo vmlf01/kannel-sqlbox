@@ -604,6 +604,14 @@ static void sql_to_bearerbox(void *arg)
             if (msg->sms.deferred != SMS_PARAM_UNDEFINED)
                 msg->sms.deferred = time(NULL) + msg->sms.deferred * 60;
             send_msg(boxc->bearerbox_connection, boxc, msg);
+
+            /* convert validity & deferred back to minutes
+             * TODO clarify why we fetched message from DB and then insert it back here???
+             */
+            if (msg->sms.validity != SMS_PARAM_UNDEFINED)
+                msg->sms.validity = (msg->sms.validity - time(NULL))/60;
+            if (msg->sms.deferred != SMS_PARAM_UNDEFINED)
+                msg->sms.deferred = (msg->sms.deferred - time(NULL))/60;
             gw_sql_save_msg(msg, octstr_imm("MT"));
         }
         else {
