@@ -121,6 +121,8 @@ Msg *oracle_fetch_msg()
             id = get_oracle_octstr_col(0);
             /* save fields in this row as msg struct */
             msg = msg_create(sms);
+            /* we abuse the foreign_id field in the message struct for our sql_id value */
+            msg->sms.foreign_id = get_oracle_octstr_col(0);
             msg->sms.sender     = get_oracle_octstr_col(2);
             msg->sms.receiver   = get_oracle_octstr_col(3);
             msg->sms.udhdata    = get_oracle_octstr_col(4);
@@ -224,6 +226,7 @@ void oracle_save_msg(Msg *msg, Octstr *momt /*, Octstr smsbox_id */)
     gwlist_append(binds, st_str(msg->sms.boxc_id));	/* :23 */
     gwlist_append(binds, st_str(msg->sms.binfo));	/* :24 */
     gwlist_append(binds, st_str(msg->sms.meta_data));	/* :25 */
+    gwlist_append(binds, st_str(msg->sms.foreign_id));	/* :26 */
 #if defined(SQLBOX_TRACE)
      debug("SQLBOX", 0, "sql: %s", octstr_get_cstr(sql));
 #endif
@@ -326,6 +329,8 @@ found:
     res->sql_leave = oracle_leave;
     res->sql_fetch_msg = oracle_fetch_msg;
     res->sql_save_msg = oracle_save_msg;
+    res->sql_fetch_msg_list = NULL;
+    res->sql_save_list = NULL;
     return res;
 }
 #endif

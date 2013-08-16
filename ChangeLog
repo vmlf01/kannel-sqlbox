@@ -1,3 +1,15 @@
+2013-08-11  Rene Kluwen <rene dot kluwen at chimit dot nl>
+    Implemented configuration directives: limit-per-cycle (thanks to Alejandro
+    Guerrieri for the original patch), save-dlr, save-mo, save-mt.
+    Speed improvements for messages sent via the insert-table should be
+    significant because we process batches of records both when selecting and
+    inserting as well as deleting.
+    Thanks to Rinor Hoxha for reviewing the patch.
+    Besides, this patch allows for saving of the foreign id field in the
+    sql log table (all database engines). This is backward incompatible.
+    To continue a running installation perform:
+    alter table [log-table|insert-table] add column (foreign_id VARCHAR(255) NULL);
+
 2011-05-08  Rene Kluwen <rene dot kluwen at chimit dot nl>
     * gw/sqlbox.c
       fixed memory leak sending messages through the send_sms table

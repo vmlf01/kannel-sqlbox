@@ -531,35 +531,69 @@ bearerbox-port = 13001
                 <entry>host-name</entry>
                 <entry valign="bottom">This is the host where bearerbox is running.</entry>
               </row>
-                            <row>
-                                <entry>
-                                    <literal>bearerbox-port (m)</literal>
-                                </entry>
-                                <entry>port-number</entry>
-                                <entry valign="bottom">This is the port number used to connect to bearerbox.</entry>
-                            </row>
-                            <row>
-                                <entry>
-                                    <literal>smsbox-port (c)</literal>
-                                </entry>
-                                <entry>port-number</entry>
-                                <entry valign="bottom"> This is the port number to which the
-                                    smsboxes, if any, connect. This can be
-                                    anything you want. Must be set if you want to handle any SMS
-                                    traffic. </entry>
-                            </row>
-                            <row>
-                                <entry>
-                                    <literal>smsbox-port-ssl (o)</literal>
-                                </entry>
-                                <entry>bool</entry>
-                                <entry valign="bottom"> If set to true, the smsbox connection
-                                    module will be SSL-enabled. Your smsboxes will have to connect
-                                    using SSL to sqlbox then. This is used to secure
-                                    communication between sqlbox and smsboxes in case they are
-                                    in separate networks operated and the TCP communication is not
-                                    secured on a lower network layer. Defaults to "no". </entry>
-                            </row>
+              <row>
+                  <entry>
+                      <literal>bearerbox-port (m)</literal>
+                  </entry>
+                  <entry>port-number</entry>
+                  <entry valign="bottom">This is the port number used to connect to bearerbox.</entry>
+              </row>
+              <row>
+                  <entry>
+                      <literal>smsbox-port (c)</literal>
+                  </entry>
+                  <entry>port-number</entry>
+                  <entry valign="bottom"> This is the port number to which the
+                      smsboxes, if any, connect. This can be
+                      anything you want. Must be set if you want to handle any SMS
+                      traffic. </entry>
+              </row>
+              <row>
+                  <entry>
+                      <literal>smsbox-port-ssl (o)</literal>
+                  </entry>
+                  <entry>bool</entry>
+                  <entry valign="bottom"> If set to true, the smsbox connection
+                      module will be SSL-enabled. Your smsboxes will have to connect
+                      using SSL to sqlbox then. This is used to secure
+                      communication between sqlbox and smsboxes in case they are
+                      in separate networks operated and the TCP communication is not
+                      secured on a lower network layer. Defaults to "no". </entry>
+              </row>
+              <row>
+                <entry>
+                  <literal>limit-per-cycle</literal>
+                </entry>
+                <entry>number</entry>
+                <entry valign="bottom">Sqlbox processes this number of messages at a time. Note:
+                    Currently only the MySQL driver supports this configuration directive. Defaults to 10.
+                    If you raise this number high enough, you might want to increase max_allowed_packet in your
+                    MySQL configuration.</entry>
+              </row>
+              <row>
+                <entry>
+                  <literal>save-dlr (o)</literal>
+                </entry>
+                <entry>bool</entry>
+                <entry valign="bottom">Indicates whether to save dlr messages in the sql-log-table. Defaults to "yes".</entry>
+              </row>
+              <row>
+                <entry>
+                  <literal>save-mo (o)</literal>
+                </entry>
+                <entry>bool</entry>
+                <entry valign="bottom">Indicates whether to save mobile originated (MO) messages in the sql-log-table.
+                    Defaults to "yes".</entry>
+              </row>
+              <row>
+                <entry>
+                  <literal>save-mt (o)</literal>
+                </entry>
+                <entry>bool</entry>
+                <entry valign="bottom">Indicates whether to save mobile terminated (MT) messages in the sql-log-table.
+                    This applies to messages that are sent via smsbox as well as messages inserted in the sql-insert-table.
+                    Defaults to "yes".</entry>
+              </row>
               <row>
                 <entry>
                   <literal>sql-log-table</literal>
