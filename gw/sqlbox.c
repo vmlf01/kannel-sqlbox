@@ -438,10 +438,16 @@ static void bearerbox_to_smsbox(void *arg)
         }
         if (msg_type(msg) == sms) {
             msg_escaped = msg_duplicate(msg);
-            if (msg->sms.sms_type != report_mo)
-                if (save_mo) gw_sql_save_msg(msg_escaped, octstr_imm("MO"));
-            else
-                if (save_dlr) gw_sql_save_msg(msg_escaped, octstr_imm("DLR"));
+            if (msg->sms.sms_type != report_mo) {
+                if (save_mo) {
+                    gw_sql_save_msg(msg_escaped, octstr_imm("MO"));
+                }
+            }
+            else {
+                if (save_dlr) {
+                    gw_sql_save_msg(msg_escaped, octstr_imm("DLR"));
+                }
+            }
             msg_destroy(msg_escaped);
         }
         send_msg(conn->smsbox_connection, conn, msg);

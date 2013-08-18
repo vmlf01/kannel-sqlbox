@@ -1,3 +1,7 @@
+2013-08-18  Rene Kluwen <rene dot kluwen at chimit dot nl>
+    Fixed a semantical error as where dlr's coming from smsbox were not saved
+    in the log-table, even when save-dlr is true.
+
 2013-08-11  Rene Kluwen <rene dot kluwen at chimit dot nl>
     Implemented configuration directives: limit-per-cycle (thanks to Alejandro
     Guerrieri for the original patch), save-dlr, save-mo, save-mt.
