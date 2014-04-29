@@ -1,3 +1,11 @@
+2014-04-29  Stipe Tolj  <stolj at kannel.org>
+    * doc/userguide.xml: move from DocBook V3.1 to V4.2 and fix various XML
+      tag errors. No content change.
+    * gw/Makefile.in, Makefile.in: automake generated files.
+    * Makefile.am: add $(XML_DCL) reference to the xml.dcl file.
+    * configure[.in]: we need the xml.dcl to be added to the jade execution
+      to have a clean XML tag declaration, since we are in SGML mode here.
+      
 2013-08-18  Rene Kluwen <rene dot kluwen at chimit dot nl>
     Fixed a semantical error as where dlr's coming from smsbox were not saved
     in the log-table, even when save-dlr is true.

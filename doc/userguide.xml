@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook V3.1//EN"
-     [
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+                      "http://docbook.org/xml/4.2/docbookx.dtd" [
 <!ENTITY figtype "#FIGTYPE#">
 <!ENTITY timestamp "#DATE#">
 <!ENTITY version "#VERSION#">
 <!ENTITY % draft "#DRAFTS#">
 ]>
+
     <!--
         Embed your block with these to set it to "draft" <![%draft;[ <your
         block> ]]>
@@ -156,7 +157,7 @@
         <note>
             <para>
                 If you are upgrading from a previous version, please look at
-                <xref linkend="upgrading-notes"> for any important information.
+                <xref linkend="upgrading-notes"/> for any important information.
             </para>
         </note>
         <sect1>
@@ -241,7 +242,7 @@
                 finishes its job, you have a problem, and you either need to fix it
                 yourself, if you can, or report the problem to the Kannel project.
                 See
-                <xref linkend="bug-reporting"> for details.
+                <xref linkend="bug-reporting"/> for details.
             </para>
             <para>
                 For detailed instruction on using the configuration script, see file
