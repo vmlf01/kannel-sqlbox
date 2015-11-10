@@ -396,6 +396,9 @@ found:
     if (have_port) {
         db_conf->mysql->port = mysql_port;
     }
+    else {
+        db_conf->mysql->port = 3306;
+    }
 
     pool = dbpool_create(DBPOOL_MYSQL, db_conf, pool_size);
     gw_assert(pool != NULL);
